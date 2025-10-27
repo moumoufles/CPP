@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 16:49:28 by lucas             #+#    #+#             */
-/*   Updated: 2025/09/08 17:32:06 by lucas            ###   ########.fr       */
+/*   Updated: 2025/10/27 16:38:41 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 Zombie* newZombie( std::string name )
 {
-    return new Zombie(name);
+	return new Zombie(name);
 }

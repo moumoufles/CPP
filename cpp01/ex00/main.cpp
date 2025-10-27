@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 17:04:35 by lucas             #+#    #+#             */
-/*   Updated: 2025/09/08 17:32:15 by lucas            ###   ########.fr       */
+/*   Updated: 2025/10/27 16:38:02 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int main()
 {
-    Zombie* z1 = newZombie("HeapZombie");
-    z1->announce();
-    delete z1;
-    randomChump("StackZombie");
+	Zombie* z1 = newZombie("HeapZombie");
+	z1->announce();
+	delete z1;
+	randomChump("StackZombie");
 }

@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 16:50:11 by lucas             #+#    #+#             */
-/*   Updated: 2025/09/08 17:32:01 by lucas            ###   ########.fr       */
+/*   Updated: 2025/10/27 16:38:44 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void randomChump( std::string name )
 {
-    Zombie z(name);
-    z.announce();
+	Zombie z(name);
+	z.announce();
 }

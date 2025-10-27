@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 17:33:49 by lucas             #+#    #+#             */
-/*   Updated: 2025/09/08 18:07:08 by lucas            ###   ########.fr       */
+/*   Updated: 2025/10/27 16:37:47 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ private:
 	std::string name;
 
 public:
-    Zombie();
+	Zombie();
 	Zombie(std::string name);
 	~Zombie();
-    void setName(std::string name);
+	void setName(std::string name);
 	void announce(void); 
 };
 
