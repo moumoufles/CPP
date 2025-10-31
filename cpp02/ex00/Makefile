@@ -1,8 +1,8 @@
-NAME	:= humans
+NAME	:= fixed
 CC		:= c++
 CFLAGS	:= -Wall -Wextra -Werror -std=c++98
 
-SRCS	:= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS	:= main.cpp Fixed.cpp 
 OBJS	:= $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -11,10 +11,10 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	@rm -f $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
