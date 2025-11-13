@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ltantin <ltantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 15:47:54 by lucas             #+#    #+#             */
-/*   Updated: 2025/10/22 15:25:24 by lucas            ###   ########.fr       */
+/*   Updated: 2025/11/13 19:16:19 by ltantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,39 @@ void PhoneBook::searchContact() const
 		contacts[i].displayShort(i);
 		i++;
 	}
-	std::cout << "Enter the index of the contact to view details: ";
-	int index;
-	std::cin >> index;
-	if(std::cin.fail() || index < 0 || index >= contactCount) {
-		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		std::cout << "Invalid index." << std::endl;
-		return;
-	}
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	contacts[index].displayContact();
+	std::string line;
+    while (true)
+    {
+        std::cout << "Enter the index of the contact to view details: ";
+        std::getline(std::cin, line);
+        if (line.empty())
+        {
+            std::cout << "Empty input.\n";
+            continue;
+        }
+
+		bool allDigits = true;
+		for (char c : line)
+		{
+			if (!std::isdigit(static_cast<unsigned char>(c)))
+			{
+				allDigits = false;
+				break;
+			}
+		}
+		if (!allDigits)
+		{
+			std::cout << "Invalid index.\n";
+			continue;
+		}
+		
+		int index = std::stoi(line);
+        if (index < 0 || index >= contactCount )
+        {
+            std::cout << "Invalid index.\n";
+            continue;
+        }
+        contacts[index].displayContact();
+        break;
+    }
 }
