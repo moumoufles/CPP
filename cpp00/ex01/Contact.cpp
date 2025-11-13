@@ -6,7 +6,7 @@
 /*   By: ltantin <ltantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 15:47:10 by lucas             #+#    #+#             */
-/*   Updated: 2025/11/13 19:16:24 by ltantin          ###   ########.fr       */
+/*   Updated: 2025/11/13 19:54:46 by ltantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,25 @@
 
 void Contact::setContact() 
 {
-	setField("First Name: ", _firstName);
-    setField("Last Name: ", _lastName);
-    setField("Nickname: ", _nickName);
-    setField("Phone Number: ", _phoneNumber);
-    setField("Darkest Secret: ", _darkestSecret);
-}
-
-void Contact::setField(const std::string &message, std::string &field)
-{
-    while (1)
+	while (1)
     {
-        std::cout << message;
-        std::getline(std::cin, field);
-        if (!field.empty())
-            break;
-        std::cout << "Empty input.\n";
+        std::cout << "First Name: ";
+        if (!std::getline(std::cin, _firstName))
+            exit(1);
+		if (!_firstName.empty())
+			break;
     }
+	std::cout << "Last Name: ";
+	std::getline(std::cin, _lastName);
+	
+	std::cout << "Nickname: ";
+	std::getline(std::cin, _nickName);
+	
+	std::cout << "Phone Number: ";
+	std::getline(std::cin, _phoneNumber);
+	
+	std::cout << "Darkest Secret: ";
+	std::getline(std::cin, _darkestSecret);
 }
 
 void Contact::displayContact() const 

@@ -6,7 +6,7 @@
 /*   By: ltantin <ltantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 15:47:54 by lucas             #+#    #+#             */
-/*   Updated: 2025/11/13 19:16:19 by ltantin          ###   ########.fr       */
+/*   Updated: 2025/11/13 19:38:16 by ltantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ PhoneBook::PhoneBook()
 void PhoneBook::addContact()
 {
 	contacts[nextIndex].setContact();
-
+		
 	if (contactCount < 8)
 		contactCount++;
 
@@ -54,13 +54,8 @@ void PhoneBook::searchContact() const
     while (true)
     {
         std::cout << "Enter the index of the contact to view details: ";
-        std::getline(std::cin, line);
-        if (line.empty())
-        {
-            std::cout << "Empty input.\n";
+        if (!std::getline(std::cin, line) || line.empty())
             continue;
-        }
-
 		bool allDigits = true;
 		for (char c : line)
 		{
