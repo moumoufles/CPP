@@ -6,7 +6,7 @@
 /*   By: ltantin <ltantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 15:39:42 by lucas             #+#    #+#             */
-/*   Updated: 2025/11/13 19:37:58 by ltantin          ###   ########.fr       */
+/*   Updated: 2025/11/14 17:04:31 by ltantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ private:
 	
 public:
 	void setContact();
-	void setField(const std::string &message, std::string &field);
 	void displayContact() const;
 	void displayShort(int index) const;
 };

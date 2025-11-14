@@ -6,7 +6,7 @@
 /*   By: ltantin <ltantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 15:47:54 by lucas             #+#    #+#             */
-/*   Updated: 2025/11/13 19:38:16 by ltantin          ###   ########.fr       */
+/*   Updated: 2025/11/14 16:43:59 by ltantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,14 @@ void PhoneBook::searchContact() const
 		i++;
 	}
 	std::string line;
-    while (true)
-    {
-        std::cout << "Enter the index of the contact to view details: ";
-        if (!std::getline(std::cin, line) || line.empty())
-            continue;
+	while (true)
+	{
+		std::cout << "Enter the index of the contact to view details: ";
+		if (!std::getline(std::cin, line))
+			exit(1);
+		if (line.empty())
+			continue;
+			
 		bool allDigits = true;
 		for (char c : line)
 		{
@@ -72,12 +75,12 @@ void PhoneBook::searchContact() const
 		}
 		
 		int index = std::stoi(line);
-        if (index < 0 || index >= contactCount )
-        {
-            std::cout << "Invalid index.\n";
-            continue;
-        }
-        contacts[index].displayContact();
-        break;
-    }
+		if (index < 0 || index >= contactCount )
+		{
+			std::cout << "Invalid index.\n";
+			continue;
+		}
+		contacts[index].displayContact();
+		break;
+	}
 }

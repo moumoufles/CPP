@@ -6,7 +6,7 @@
 /*   By: ltantin <ltantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 15:47:10 by lucas             #+#    #+#             */
-/*   Updated: 2025/11/13 19:54:46 by ltantin          ###   ########.fr       */
+/*   Updated: 2025/11/14 17:05:04 by ltantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 void Contact::setContact() 
 {
 	while (1)
-    {
-        std::cout << "First Name: ";
-        if (!std::getline(std::cin, _firstName))
-            exit(1);
+	{
+		std::cout << "First Name: ";
+		if (!std::getline(std::cin, _firstName))
+			exit(1);
 		if (!_firstName.empty())
 			break;
-    }
+	}
 	std::cout << "Last Name: ";
 	std::getline(std::cin, _lastName);
 	
