@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ltantin <ltantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 15:38:25 by lucas             #+#    #+#             */
-/*   Updated: 2025/10/20 17:46:41 by lucas            ###   ########.fr       */
+/*   Updated: 2025/11/13 19:32:43 by ltantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int main()
 	while (1)
 	{
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
-		std::getline(std::cin, command);
-
+		if (!std::getline(std::cin, command))
+			break;
 		if (command == "ADD")
 			phoneBook.addContact();
 		else if (command == "SEARCH")
@@ -33,8 +33,6 @@ int main()
 			std::cout << "BYE!" << std::endl;
 			break;
 		}
-		else 
-			std::cout << "Syntax error, try again." << std::endl;
 	}
 	return (0);
 }

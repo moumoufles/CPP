@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ltantin <ltantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 15:39:42 by lucas             #+#    #+#             */
-/*   Updated: 2025/10/22 14:47:49 by lucas            ###   ########.fr       */
+/*   Updated: 2025/11/14 17:04:31 by ltantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 class Contact 
 {
 private:
-	std::string firstName;
-	std::string lastName;
-	std::string nickName;
-	std::string phoneNumber;
-	std::string darkestSecret;
+	std::string _firstName;
+	std::string _lastName;
+	std::string _nickName;
+	std::string _phoneNumber;
+	std::string _darkestSecret;
 	
 public:
 	void setContact();
