@@ -6,7 +6,7 @@
 /*   By: ltantin <ltantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 15:47:10 by lucas             #+#    #+#             */
-/*   Updated: 2025/12/03 18:42:42 by ltantin          ###   ########.fr       */
+/*   Updated: 2025/12/03 18:43:52 by ltantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void Contact::setContact()
 		if (!std::getline(std::cin, _firstName))
 			exit(1);
 		if (!_firstName.empty()
-        && _firstName.find(' ')  == std::string::npos
-        && _firstName.find('\t') == std::string::npos)
-       		break;
+		&& _firstName.find(' ')  == std::string::npos
+		&& _firstName.find('\t') == std::string::npos)
+	   		break;
 	}
 	while (1)
 	{
@@ -31,8 +31,8 @@ void Contact::setContact()
 		if (!std::getline(std::cin, _lastName))
 			exit(1);
 		if (!_lastName.empty()
-        && _lastName.find(' ')  == std::string::npos
-        && _lastName.find('\t') == std::string::npos)
+		&& _lastName.find(' ')  == std::string::npos
+		&& _lastName.find('\t') == std::string::npos)
 			break;
 	}
 	while (1)
@@ -41,8 +41,8 @@ void Contact::setContact()
 		if (!std::getline(std::cin, _nickName))
 			exit(1);
 		if (!_nickName.empty()
-        && _nickName.find(' ')  == std::string::npos
-        && _nickName.find('\t') == std::string::npos)
+		&& _nickName.find(' ')  == std::string::npos
+		&& _nickName.find('\t') == std::string::npos)
 			break;
 	}
 	while (1)
