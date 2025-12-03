@@ -6,7 +6,7 @@
 /*   By: ltantin <ltantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 15:47:10 by lucas             #+#    #+#             */
-/*   Updated: 2025/12/03 16:34:26 by ltantin          ###   ########.fr       */
+/*   Updated: 2025/12/03 18:42:42 by ltantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,19 @@ void Contact::setContact()
 		std::cout << "First Name: ";
 		if (!std::getline(std::cin, _firstName))
 			exit(1);
-		if (!_firstName.empty())
-			break;
+		if (!_firstName.empty()
+        && _firstName.find(' ')  == std::string::npos
+        && _firstName.find('\t') == std::string::npos)
+       		break;
 	}
 	while (1)
 	{
 		std::cout << "Last Name: ";
 		if (!std::getline(std::cin, _lastName))
 			exit(1);
-		if (!_lastName.empty())
+		if (!_lastName.empty()
+        && _lastName.find(' ')  == std::string::npos
+        && _lastName.find('\t') == std::string::npos)
 			break;
 	}
 	while (1)
@@ -36,7 +40,9 @@ void Contact::setContact()
 		std::cout << "Nickname: ";
 		if (!std::getline(std::cin, _nickName))
 			exit(1);
-		if (!_nickName.empty())
+		if (!_nickName.empty()
+        && _nickName.find(' ')  == std::string::npos
+        && _nickName.find('\t') == std::string::npos)
 			break;
 	}
 	while (1)
@@ -44,16 +50,60 @@ void Contact::setContact()
 		std::cout << "Phone Number: ";
 		if (!std::getline(std::cin, _phoneNumber))
 			exit(1);
-		if (!_phoneNumber.empty())
+
+		if (_phoneNumber.empty())
+			continue;
+
+		bool valid = true;
+		size_t i = 0;
+		while (i < _phoneNumber.size())
+		{
+			char c = _phoneNumber[i];
+
+			if (std::isdigit(static_cast<unsigned char>(c)))
+			{
+				i++;
+				continue;
+			}
+
+			if (c == ' ')
+			{
+				if (i == 0 || i == _phoneNumber.size() - 1)
+				{
+					valid = false;
+					break;
+				}
+				if (!std::isdigit(static_cast<unsigned char>(_phoneNumber[i - 1])) ||
+					!std::isdigit(static_cast<unsigned char>(_phoneNumber[i + 1])))
+				{
+					valid = false;
+					break;
+				}
+				i++;
+				continue;
+			}
+			valid = false;
 			break;
+		}
+
+		if (!valid)
+			continue;
+		break;
 	}
 	while (1)
 	{
 		std::cout << "Darkest Secret: ";
 		if (!std::getline(std::cin, _darkestSecret))
 			exit(1);
-		if (!_darkestSecret.empty())
-			break;
+		if (_darkestSecret.empty())
+			continue;
+		char first = _darkestSecret.front();
+		char last  = _darkestSecret.back();
+
+		if (std::isspace(static_cast<unsigned char>(first)) ||
+			std::isspace(static_cast<unsigned char>(last)))
+				continue;
+		break;
 	}
 }
 
