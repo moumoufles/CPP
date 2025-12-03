@@ -6,7 +6,7 @@
 /*   By: ltantin <ltantin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 15:47:10 by lucas             #+#    #+#             */
-/*   Updated: 2025/11/14 17:05:04 by ltantin          ###   ########.fr       */
+/*   Updated: 2025/12/03 16:34:26 by ltantin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,38 @@ void Contact::setContact()
 		if (!_firstName.empty())
 			break;
 	}
-	std::cout << "Last Name: ";
-	std::getline(std::cin, _lastName);
-	
-	std::cout << "Nickname: ";
-	std::getline(std::cin, _nickName);
-	
-	std::cout << "Phone Number: ";
-	std::getline(std::cin, _phoneNumber);
-	
-	std::cout << "Darkest Secret: ";
-	std::getline(std::cin, _darkestSecret);
+	while (1)
+	{
+		std::cout << "Last Name: ";
+		if (!std::getline(std::cin, _lastName))
+			exit(1);
+		if (!_lastName.empty())
+			break;
+	}
+	while (1)
+	{
+		std::cout << "Nickname: ";
+		if (!std::getline(std::cin, _nickName))
+			exit(1);
+		if (!_nickName.empty())
+			break;
+	}
+	while (1)
+	{
+		std::cout << "Phone Number: ";
+		if (!std::getline(std::cin, _phoneNumber))
+			exit(1);
+		if (!_phoneNumber.empty())
+			break;
+	}
+	while (1)
+	{
+		std::cout << "Darkest Secret: ";
+		if (!std::getline(std::cin, _darkestSecret))
+			exit(1);
+		if (!_darkestSecret.empty())
+			break;
+	}
 }
 
 void Contact::displayContact() const 
