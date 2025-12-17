@@ -29,5 +29,5 @@ FragTrap::~FragTrap() { std::cout << "[FragTrap] Destructor called\n"; }
 void FragTrap::highFivesGuys()
 {
 	std::cout << "[FragTrap] My name is " << getName()
-			  << " and I am sending a positive highFives for you <3!!";
+			  << " and I am sending a positive highFives for you !";
 }

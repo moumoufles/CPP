@@ -18,10 +18,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 	std::cout << "[ScavTrap] Copy assignment operator called\n";
 	if (this == &other)
 		return *this;
-	Name_ = other.getName();
-	HitPoints_ = other.getHitPoints();
-	EnergyPoints_ = other.getEnergyPoints();
-	AttackDamage_ = other.getAttackDamage();
+	ClapTrap::operator=(other);
 	return *this;
 }
 

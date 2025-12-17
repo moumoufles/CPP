@@ -2,26 +2,20 @@
 
 int main()
 {
-	ClapTrap MachineA("Robot");
-	ClapTrap MachineB("Robot");
-	MachineA.attack(MachineB.getName());
-	MachineB.takeDamage(5);
-	MachineA.beRepaired(1);
+	ScavTrap scav("Bob");
+	scav.guardGate();
 
-	std::cout << std::endl << std::endl;
+	scav.attack("Claudine");
+	std::cout << "Energy after attack: " << scav.getEnergyPoints() << std::endl;
 
-	ScavTrap ScavA("Maurice");
-	ScavA.guardGate();
-	ScavA.attack("Paul");
-	ScavA.takeDamage(10);
+	scav.takeDamage(30);
+	std::cout << "HP after damage: " << scav.getHitPoints() << std::endl;
+	scav.beRepaired(10);
+	std::cout << "HP after repair: " << scav.getHitPoints() << std::endl;
 
-	ScavTrap ScavB(ScavA);
-	ScavB.beRepaired(5);
-	ScavB.beRepaired(1);
+	scav.takeDamage(150);
+	scav.attack("cible");
+	scav.guardGate();
 
-	ScavTrap ScavC = ScavA;
-	ScavC.takeDamage(100);
-	ScavC.takeDamage(100);
-	ScavC.attack("Pierre");
 	return 0;
 }

@@ -13,7 +13,7 @@ private:
 	int AttackDamage_;
 
 public:
-	explicit ClapTrap(std::string Name);
+	ClapTrap(std::string Name);
 	ClapTrap(const ClapTrap &other);
 	ClapTrap &operator=(const ClapTrap &other);
 	~ClapTrap();

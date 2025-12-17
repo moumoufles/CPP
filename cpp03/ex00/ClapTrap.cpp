@@ -35,7 +35,6 @@ ClapTrap::~ClapTrap()
 std::string ClapTrap::getName() const { return (this->Name_); }
 
 int ClapTrap::getHitPoints() const { return (this->HitPoints_); }
-
 int ClapTrap::getEnergyPoints() const { return (this->EnergyPoints_); }
 int ClapTrap::getAttackDamage() const { return (this->AttackDamage_); }
 
@@ -55,7 +54,7 @@ void ClapTrap::attack(const std::string &target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	addHitPoints(-(int(amount)));
-	std::cout << "OUCH!!! I got a " << amount << " HitDamage." << std::endl;
+	std::cout << "ClapTrap " << this->getName() << " takes " << amount << " points of damage! " << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
